@@ -12,12 +12,12 @@ const inputField = document.querySelector('.input-field')
 
 //dummy comment to test git pull
 
-let map = L.map('map').setView([51.505, -0.09], 13)
+let map2 = L.map('map').setView([51.505, -0.09], 13)
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map)
+}).addTo(map2)
 
 //API
 let ipAddress
@@ -57,13 +57,13 @@ const mapLocation = (lat, lng) => {
     iconSize: [46, 56], // size of the icon
     iconAnchor: [23, 55], // point of the icon which will correspond to marker's location
   })
-  map.setView([lat, lng], 17)
+  map2.setView([lat, lng], 17)
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: false,
-  }).addTo(map)
+  }).addTo(map2)
 
-  L.marker([lat, lng], { icon: markerIcon }).addTo(map)
+  L.marker([lat, lng], { icon: markerIcon }).addTo(map2)
 }
 
 //Search by IP + validation
